@@ -105,10 +105,18 @@
         <button id="clear" class="btn" type="reset">
           清空
         </button>
-        <button id="auto" class="btn" type="button">
+        <button id="auto" class="btn" type="button" style="color: #ff66cc; font-size: 0.8em; font-weight: bold; animation: blink 1s step-start infinite;">
           自动解码
         </button>
       </div>
+
+      <style>
+        @keyframes blink {
+          50% {
+            opacity: 0;
+          }
+        }
+      </style>
 
       <div class="view-wrap">
         <div class="view-control">
