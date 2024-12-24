@@ -108,12 +108,13 @@ code {
     }
   }
 
-&:empty:before {
-  content: '这里 显示 转换结果……';
-  font-size: 0.8em; /* 设置小体字 */
-  color: #ff66cc; /* 粉红色 */
-  font-weight: bold; /* 加粗文字 */
-  animation: blink 1s step-start infinite; /* 闪烁效果 */
+  &:empty:before {
+    content: '这里 显示 转换结果……';
+    font-size: 0.8em; /* 设置小体字 */
+    color: #ff66cc; /* 粉红色 */
+    font-weight: bold; /* 加粗文字 */
+    animation: blink 1s step-start infinite; /* 闪烁效果 */
+  }
 }
 
 @keyframes blink {
