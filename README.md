@@ -5,7 +5,7 @@
 
 ## 默认情况下**Unreadable** 选项处于禁用状态;
 来源于 [JS Nice](http://www.jsnice.org/). 
-需要安装油猴脚本 [xx_helper.user.js](https://github.com/pxx917144686/xx/raw/refs/heads/main/userscript/xx_helper.user.js) 
+需要安装油猴脚本 [xx_helper.user.js](https://github.com/pxx917144686/pxxjs/raw/refs/heads/main/userscript/pxxjs_helper.user.js) 
 
 
 ## 功能
