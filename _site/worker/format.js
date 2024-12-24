@@ -3,7 +3,7 @@
  * @description  娱乐一下 测试效果
  * @author  pxx917144686 <> (http://localhost:4000)
  * @version  0.0.2
- * @copyright  pxx917144686 2017
+ * @copyright  pxx917144686
  * @license  MIT
  */
 
