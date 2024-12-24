@@ -27,7 +27,7 @@ self.addEventListener('message', (e) => {
     },
     jsjiami.com.v7: () => {
       self.importScripts('{{ "lib/sojsonv7.js" | relative_url }}');
-      return sojsonv7.js(source);
+      return sojsonv7(source);
     },
     _numberencode: () => {
       self.importScripts('{{ "lib/numberdecode.js" | relative_url }}');
