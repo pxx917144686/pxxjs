@@ -1,18 +1,20 @@
+---
+---
 /**
- * @name  pxxjs
- * @description  娱乐一下 测试效果
- * @author  pxx917144686 <> (http://localhost:4000)
- * @version  0.0.2
- * @copyright  pxx917144686 2017
- * @license  MIT
+ * @name  {{ site.name }}
+ * @description  {{ site.description }}
+ * @author  {{ site.author }} <{{ site.author_email }}> ({{ site.url }})
+ * @version  {{ site.version }}
+ * @copyright  {{ site.author }} 2017
+ * @license  {{ site.license }}
  */
 
 /* globals EvalDecode, ArrayDecode, _NumberDecode, JSFuckDecode, ObfuscatorIO, CleanSource, AADecode, JJdecode, Urlencoded, P_A_C_K_E_R, JavascriptObfuscator, MyObfuscate, Wise_EvalDecode, Wise_FunctionalDecode */
 /* eslint-disable no-console */
 
 self.addEventListener('message', (e) => {
-  self.importScripts('/pxxjs/third_party/mathjs/math.min.js');
-  self.importScripts('/pxxjs/lib/utils.js');
+  self.importScripts('{{ "third_party/mathjs/math.min.js" | relative_url }}');
+  self.importScripts('{{ "lib/utils.js" | relative_url }}');
 
   let source = e.data.source;
   const packer = e.data.packer;
@@ -20,63 +22,63 @@ self.addEventListener('message', (e) => {
 
   const methods = {
     evalencode: () => {
-      self.importScripts('/pxxjs/lib/evaldecode.js');
+      self.importScripts('{{ "lib/evaldecode.js" | relative_url }}');
       return EvalDecode(source);
     },
     _numberencode: () => {
-      self.importScripts('/pxxjs/lib/numberdecode.js');
+      self.importScripts('{{ "lib/numberdecode.js" | relative_url }}');
       return _NumberDecode(source);
     },
     arrayencode: () => {
-      self.importScripts('/pxxjs/lib/arraydecode.js');
+      self.importScripts('{{ "lib/arraydecode.js" | relative_url }}');
       return ArrayDecode(source, options);
     },
     jsfuck: () => {
-      self.importScripts('/pxxjs/lib/jsfuckdecode.js');
+      self.importScripts('{{ "lib/jsfuckdecode.js" | relative_url }}');
       return JSFuckDecode(source);
     },
     obfuscatorio: () => {
-      self.importScripts('/pxxjs/lib/obfuscatorio.js');
+      self.importScripts('{{ "lib/obfuscatorio.js" | relative_url }}');
       return ObfuscatorIO(source, options);
     },
     cleansource: () => {
-      self.importScripts('/pxxjs/lib/cleansource.js');
+      self.importScripts('{{ "lib/cleansource.js" | relative_url }}');
       return CleanSource(source, options);
     },
     aaencode: () => {
-      self.importScripts('/pxxjs/third_party/cat-in-136/aadecode.js');
+      self.importScripts('{{ "third_party/cat-in-136/aadecode.js" | relative_url }}');
       return AADecode.decode(source);
     },
     jjencode: () => {
-      self.importScripts('/pxxjs/third_party/decoder-jjencode/jjdecode.js');
+      self.importScripts('{{ "third_party/decoder-jjencode/jjdecode.js" | relative_url }}');
       return JJdecode.decode(source);
     },
     urlencode: () => {
-      self.importScripts('/pxxjs/third_party/js-beautify/unpackers/urlencode_unpacker.js');
+      self.importScripts('{{ "third_party/js-beautify/unpackers/urlencode_unpacker.js" | relative_url }}');
       if (Urlencoded.detect(source)) return Urlencoded.unpack(source);
       throw 'Not matched';
     },
     p_a_c_k_e_r: () => {
-      self.importScripts('/pxxjs/third_party/js-beautify/unpackers/p_a_c_k_e_r_unpacker.js');
+      self.importScripts('{{ "third_party/js-beautify/unpackers/p_a_c_k_e_r_unpacker.js" | relative_url }}');
       if (P_A_C_K_E_R.detect(source)) return P_A_C_K_E_R.unpack(source);
       throw 'Not matched';
     },
     javascriptobfuscator: () => {
-      self.importScripts('/pxxjs/third_party/js-beautify/unpackers/javascriptobfuscator_unpacker.js');
+      self.importScripts('{{ "third_party/js-beautify/unpackers/javascriptobfuscator_unpacker.js" | relative_url }}');
       if (JavascriptObfuscator.detect(source)) return JavascriptObfuscator.unpack(source);
       throw 'Not matched';
     },
     myobfuscate: () => {
-      self.importScripts('/pxxjs/third_party/js-beautify/unpackers/myobfuscate_unpacker.js');
+      self.importScripts('{{ "third_party/js-beautify/unpackers/myobfuscate_unpacker.js" | relative_url }}');
       if (MyObfuscate.detect(source)) return MyObfuscate.unpack(source);
       throw 'Not matched';
     },
     wiseeval: () => {
-      self.importScripts('/pxxjs/third_party/NotSoWise/unpacker.js');
+      self.importScripts('{{ "third_party/NotSoWise/unpacker.js" | relative_url }}');
       return Wise_EvalDecode(source);
     },
     wisefunction: () => {
-      self.importScripts('/pxxjs/third_party/NotSoWise/unpacker.js');
+      self.importScripts('{{ "third_party/NotSoWise/unpacker.js" | relative_url }}');
       return Wise_FunctionalDecode(source);
     },
   };
