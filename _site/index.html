@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="BbaaM88Az_X9Kkutg_1d0lgK5u9URFdntKd8lB41hLs">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="/pxxjs/assets/css/style.css">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>xx | dev mode</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="xx" />
+<meta name="author" content="pxx917144686" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="娱乐一下 测试效果" />
+<meta property="og:description" content="娱乐一下 测试效果" />
+<link rel="canonical" href="http://localhost:4000/pxxjs/" />
+<meta property="og:url" content="http://localhost:4000/pxxjs/" />
+<meta property="og:site_name" content="dev mode" />
+<script type="application/ld+json">
+{"@type":"WebSite","headline":"xx","author":{"@type":"Person","name":"pxx917144686"},"description":"娱乐一下 测试效果","url":"http://localhost:4000/pxxjs/","name":"dev mode","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106940288-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments)
+    };
+    gtag('js', new Date());
+
+    gtag('config', 'UA-106940288-1');
+
+  </script>
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1 id="title">pxxjs<sup>0.0.2</sup></h1>
+      <h2>娱乐一下 测试效果</h2>
+
+      <section id="downloads">
+        
+        <a href="https://github.com/pxx917144686/pxxjs" target="_blank" class="btn btn-github">
+          <span class="icon"></span>
+          在 GitHub 上查看
+        </a>
+      </section>
+    </div>
+  </header>
+
+  <div class="container">
+    <section id="main_content">
+      <div class="tabs">
+        <div class="tab active" data-target="String">粘贴代码</div>
+        <div class="tab" data-target="Local">本地文件</div>
+        <div class="tab" data-target="Remote">远程文件</div>
+      </div>
+      <div class="cf"></div>
+      <div class="tabs-contents">
+        <div class="tab-content show" id="contentString">
+          <textarea id="input" class="content" rows="7" placeholder="在这里粘贴代码..."></textarea>
+        </div>
+        <div class="tab-content" id="contentLocal">
+          <div class="box">
+            <input type="file" name="file" id="file" class="inputfile" accept="text/javascript,text/plain">
+            <label for="file" class="read-only">
+              <span id="fileName"></span>
+              <strong>选择一个文件…</strong>
+            </label>
+          </div>
+          <pre id="renderLocal" class="render read-only"></pre>
+        </div>
+        <div class="tab-content" id="contentRemote">
+          <form class="form-wrapper cf" id="formRemove">
+            <input type="url" placeholder="请输入网址" id="urlRemove" required>
+            <button type="submit" class="btn" id="submitRemove">提交</button>
+          </form>
+          <small>链接请求 Access-Control-Allow-Origin 部分</small>
+          <pre id="renderRemove" class="render read-only"></pre>
+        </div>
+      </div>
+
+      <div class="config tab-content show">
+        <form name="pxxjs">
+          <div class="methods-wrap">
+            <input id="none" class="magic-radio" type="radio" value="" name="encode" checked>
+            <label for="none">无</label>
+            
+            <input id="evalencode" class="magic-radio pxxjs-method" type="radio" value="evalencode" name="encode">
+            <label for="evalencode">Eval</label>
+            
+            <input id="sojsonv7" class="magic-radio pxxjs-method" type="radio" value="sojsonv7" name="encode">
+            <label for="sojsonv7">jsjiami.v7</label>
+            
+            <input id="arrayencode" class="magic-radio pxxjs-method" type="radio" value="arrayencode" name="encode">
+            <label for="arrayencode">Array</label>
+            
+            <input id="obfuscatorio" class="magic-radio pxxjs-method" type="radio" value="obfuscatorio" name="encode">
+            <label for="obfuscatorio">Obfuscator IO</label>
+            
+            <input id="_numberencode" class="magic-radio pxxjs-method" type="radio" value="_numberencode" name="encode">
+            <label for="_numberencode">_Number</label>
+            
+            <input id="jsfuck" class="magic-radio pxxjs-method" type="radio" value="jsfuck" name="encode">
+            <label for="jsfuck">JSFuck</label>
+            
+            <input id="jjencode" class="magic-radio pxxjs-method" type="radio" value="jjencode" name="encode">
+            <label for="jjencode">JJencode</label>
+            
+            <input id="aaencode" class="magic-radio pxxjs-method" type="radio" value="aaencode" name="encode">
+            <label for="aaencode">AAencode</label>
+            
+            <input id="urlencode" class="magic-radio pxxjs-method" type="radio" value="urlencode" name="encode">
+            <label for="urlencode">URLencode</label>
+            
+            <input id="p_a_c_k_e_r" class="magic-radio pxxjs-method" type="radio" value="p_a_c_k_e_r" name="encode">
+            <label for="p_a_c_k_e_r">Packer</label>
+            
+            <input id="javascriptobfuscator" class="magic-radio pxxjs-method" type="radio" value="javascriptobfuscator" name="encode">
+            <label for="javascriptobfuscator">JS Obfuscator</label>
+            
+            <input id="myobfuscate" class="magic-radio pxxjs-method" type="radio" value="myobfuscate" name="encode">
+            <label for="myobfuscate">My Obfuscate</label>
+            
+            <input id="wiseeval" class="magic-radio pxxjs-method" type="radio" value="wiseeval" name="encode">
+            <label for="wiseeval">Wise Eval</label>
+            
+            <input id="wisefunction" class="magic-radio pxxjs-method" type="radio" value="wisefunction" name="encode">
+            <label for="wisefunction">Wise Function</label>
+            
+            <input id="cleansource" class="magic-radio pxxjs-method" type="radio" value="cleansource" name="encode">
+            <label for="cleansource">Clean Source</label>
+            
+            <input id="nicify" class="magic-radio" type="radio" value="nicify" name="encode" disabled>
+            <label for="nicify">
+              <a href="https://github.com/pxx917144686/pxxjs/blob/master/README.md#helper" target="_blank"
+                class="help">代码混淆功能</a>
+            </label>
+          </div>
+          <div class="options-wrap">
+            
+            <input id="lineNumbers" class="magic-checkbox pxxjs-option" type="checkbox" value="yes"
+              name="lineNumbers" >
+            <label for="lineNumbers">行号</label>
+            
+            <input id="formatCode" class="magic-checkbox pxxjs-option" type="checkbox" value="yes"
+              name="formatCode"  checked >
+            <label for="formatCode">代码格式</label>
+            
+            <input id="_unescape" class="magic-checkbox pxxjs-option" type="checkbox" value="yes"
+              name="_unescape" >
+            <label for="_unescape">取消字符串</label>
+            
+            <input id="methodChain" class="magic-checkbox pxxjs-option" type="checkbox" value="yes"
+              name="methodChain"  checked >
+            <label for="methodChain">还原代码中的路径</label>
+            
+            <input id="calc" class="magic-checkbox pxxjs-option" type="checkbox" value="yes"
+              name="calc" >
+            <label for="calc">表达方式</label>
+            
+            <input id="strMerge" class="magic-checkbox pxxjs-option" type="checkbox" value="yes"
+              name="strMerge"  checked >
+            <label for="strMerge">合并字符串</label>
+            
+            <input id="removeGrouping" class="magic-checkbox pxxjs-option" type="checkbox" value="yes"
+              name="removeGrouping" >
+            <label for="removeGrouping">删除分组</label>
+            
+          </div>
+        </form>
+      </div>
+
+      <div class="center">
+        <button id="clear" class="btn" type="reset">
+          清空
+        </button>
+        <button id="auto" class="btn" type="button">
+          自动解码
+        </button>
+      </div>
+
+      <div class="view-wrap">
+        <div class="view-control">
+          <button id="copyjs" class="btn" type="button">
+            <img class="btn-icon" src="/pxxjs/assets/images/buttons/copy-document.png"
+              alt="复制到剪贴板">
+          </button>
+          <a id="download" class="btn" type="button" href="#" download="result.js">
+            <img class="btn-icon" src="/pxxjs/assets/images/buttons/download.png" alt="下载文件">
+          </a>
+          <a id="preview" class="btn" type="button" href="#">
+            <img class="btn-icon" src="/pxxjs/assets/images/buttons/external-link-symbol.png"
+              alt="在新标签页中打开">
+          </a>
+        </div>
+        <textarea id="readable"></textarea>
+        <pre id="view" class="hljs"></pre>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <section class="sponsors">
+        <h3>依赖</h3>
+        <p>依赖网址 <a href="https://sansec.io/" target="_blank"
+            rel="noopener noreferrer">Sansec</a>.</p>
+      </section>
+      <section class="credits">
+        <h3>介绍</h3>
+        <p>项目由 <a href="https://github.com/pxx917144686/pxxjs" title="pxx917144686">pxx917144686</a> 更新
+          <br>托管于 GitHub Pages
+        </p>
+        <p>图标由 <a target="_blank" href="https://www.flaticon.com/free-icon/artificial-intelligence_653469"
+            title="Eucalyp">Eucalyp</a> 提供</p>
+      </section>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="/pxxjs/third_party/clipboard-js/clipboard.min.js"></script>
+  <script src="/pxxjs/main.js" type="text/javascript"></script>
+
+  
+</body>
+
+</html>
