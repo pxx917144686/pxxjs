@@ -3,7 +3,7 @@
 ![Logo](assets/images/icons/icon-128x128.png)
 
 
-## 默认情况下**Unreadable** 选项处于禁用状态;
+## 默认情况下**Unreadable** 禁用状态;
 来源于 [JS Nice](http://www.jsnice.org/). 
 需要安装油猴脚本 [xx_helper.user.js](https://github.com/pxx917144686/pxxjs/raw/refs/heads/main/userscript/pxxjs_helper.user.js) 
 
@@ -64,7 +64,7 @@ Install Workbox CLI:
 
 浏览器中打开 <http://localhost:4000/xx/>
 
-### Build
+### 编译
 
     npm run build
 
