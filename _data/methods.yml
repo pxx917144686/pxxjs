@@ -1,7 +1,13 @@
 - key: evalencode
   name: Eval
 - key: sojsonv7
-  name: jsjiami.v7
+  name: jsjiami.v7版本
+- key: sojson
+  name: jsjiami.v6版本
+- key: jjencode
+  name: JJencode 编码算法
+- key: Common
+  name: Common编码
 - key: arrayencode
   name: Array
 - key: obfuscatorio
