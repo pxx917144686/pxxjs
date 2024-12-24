@@ -1,19 +1,7 @@
-/**
- * @name  {{ site.name }}
- * @description  {{ site.description }}
- * @author  {{ site.author }} <{{ site.author_email }}> ({{ site.url }})
- * @version  {{ site.version }}
- * @copyright  {{ site.author }} 2017
- * @license  {{ site.license }}
- */
-
-/* globals EvalDecode, ArrayDecode, _NumberDecode, JSFuckDecode, ObfuscatorIO, CleanSource, AADecode, JJdecode, Urlencoded, P_A_C_K_E_R, JavascriptObfuscator, MyObfuscate, Wise_EvalDecode, Wise_FunctionalDecode */
-/* eslint-disable no-console */
-
 self.addEventListener('message', (e) => {
-  // 假设模板已经正确解析或替换
-  self.importScripts('third_party/mathjs/math.min.js');  // 修正后的路径
-  self.importScripts('lib/utils.js');  // 修正后的路径
+  // 确保 importScripts 路径正确
+  self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/mathjs/math.min.js');
+  self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/utils.js');
 
   let source = e.data.source;
   const packer = e.data.packer;
@@ -21,63 +9,63 @@ self.addEventListener('message', (e) => {
 
   const methods = {
     evalencode: () => {
-      self.importScripts('lib/evaldecode.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/evaldecode.js');
       return EvalDecode(source);
     },
     _numberencode: () => {
-      self.importScripts('lib/numberdecode.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/numberdecode.js');
       return _NumberDecode(source);
     },
     arrayencode: () => {
-      self.importScripts('lib/arraydecode.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/arraydecode.js');
       return ArrayDecode(source, options);
     },
     jsfuck: () => {
-      self.importScripts('lib/jsfuckdecode.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/jsfuckdecode.js');
       return JSFuckDecode(source);
     },
     obfuscatorio: () => {
-      self.importScripts('lib/obfuscatorio.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/obfuscatorio.js');
       return ObfuscatorIO(source, options);
     },
     cleansource: () => {
-      self.importScripts('lib/cleansource.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/cleansource.js');
       return CleanSource(source, options);
     },
     aaencode: () => {
-      self.importScripts('third_party/cat-in-136/aadecode.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/cat-in-136/aadecode.js');
       return AADecode.decode(source);
     },
     jjencode: () => {
-      self.importScripts('lib/jjdecode.js');  // 修改为正确的路径
-      return JJdecode.decode(source);  // 调用解码函数
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/decoder-jjencode/jjdecode.js');
+      return JJdecode.decode(source);
     },
     urlencode: () => {
-      self.importScripts('third_party/js-beautify/unpackers/urlencode_unpacker.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/js-beautify/unpackers/urlencode_unpacker.js');
       if (Urlencoded.detect(source)) return Urlencoded.unpack(source);
       throw 'Not matched';
     },
     p_a_c_k_e_r: () => {
-      self.importScripts('third_party/js-beautify/unpackers/p_a_c_k_e_r_unpacker.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/js-beautify/unpackers/p_a_c_k_e_r_unpacker.js');
       if (P_A_C_K_E_R.detect(source)) return P_A_C_K_E_R.unpack(source);
       throw 'Not matched';
     },
     javascriptobfuscator: () => {
-      self.importScripts('third_party/js-beautify/unpackers/javascriptobfuscator_unpacker.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/js-beautify/unpackers/javascriptobfuscator_unpacker.js');
       if (JavascriptObfuscator.detect(source)) return JavascriptObfuscator.unpack(source);
       throw 'Not matched';
     },
     myobfuscate: () => {
-      self.importScripts('third_party/js-beautify/unpackers/myobfuscate_unpacker.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/js-beautify/unpackers/myobfuscate_unpacker.js');
       if (MyObfuscate.detect(source)) return MyObfuscate.unpack(source);
       throw 'Not matched';
     },
     wiseeval: () => {
-      self.importScripts('third_party/NotSoWise/unpacker.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/NotSoWise/unpacker.js');
       return Wise_EvalDecode(source);
     },
     wisefunction: () => {
-      self.importScripts('third_party/NotSoWise/unpacker.js');  // 修正后的路径
+      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/NotSoWise/unpacker.js');
       return Wise_FunctionalDecode(source);
     },
   };
