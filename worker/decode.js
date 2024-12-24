@@ -1,7 +1,19 @@
+/**
+ * @name  {{ site.name }}
+ * @description  {{ site.description }}
+ * @author  {{ site.author }} <{{ site.author_email }}> ({{ site.url }})
+ * @version  {{ site.version }}
+ * @copyright  {{ site.author }} 2017
+ * @license  {{ site.license }}
+ */
+
+/* globals EvalDecode, ArrayDecode, _NumberDecode, JSFuckDecode, ObfuscatorIO, CleanSource, AADecode, JJdecode, Urlencoded, P_A_C_K_E_R, JavascriptObfuscator, MyObfuscate, Wise_EvalDecode, Wise_FunctionalDecode */
+/* eslint-disable no-console */
+
 self.addEventListener('message', (e) => {
-  // 修正路径：直接引用有效的 URL
-  self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/mathjs/math.min.js');
-  self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/utils.js');
+  // Ensure the template engine correctly replaces these paths with actual URLs during build time
+  self.importScripts('{{ "third_party/mathjs/math.min.js" | relative_url }}');
+  self.importScripts('{{ "lib/utils.js" | relative_url }}');
 
   let source = e.data.source;
   const packer = e.data.packer;
@@ -9,63 +21,63 @@ self.addEventListener('message', (e) => {
 
   const methods = {
     evalencode: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/evaldecode.js');
+      self.importScripts('{{ "lib/evaldecode.js" | relative_url }}');
       return EvalDecode(source);
     },
     _numberencode: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/numberdecode.js');
+      self.importScripts('{{ "lib/numberdecode.js" | relative_url }}');
       return _NumberDecode(source);
     },
     arrayencode: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/arraydecode.js');
+      self.importScripts('{{ "lib/arraydecode.js" | relative_url }}');
       return ArrayDecode(source, options);
     },
     jsfuck: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/jsfuckdecode.js');
+      self.importScripts('{{ "lib/jsfuckdecode.js" | relative_url }}');
       return JSFuckDecode(source);
     },
     obfuscatorio: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/obfuscatorio.js');
+      self.importScripts('{{ "lib/obfuscatorio.js" | relative_url }}');
       return ObfuscatorIO(source, options);
     },
     cleansource: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/cleansource.js');
+      self.importScripts('{{ "lib/cleansource.js" | relative_url }}');
       return CleanSource(source, options);
     },
     aaencode: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/cat-in-136/aadecode.js');
+      self.importScripts('{{ "third_party/cat-in-136/aadecode.js" | relative_url }}');
       return AADecode.decode(source);
     },
     jjencode: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/decoder-jjencode/jjdecode.js');
+      self.importScripts('{{ "third_party/decoder-jjencode/jjdecode.js" | relative_url }}');
       return JJdecode.decode(source);
     },
     urlencode: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/js-beautify/unpackers/urlencode_unpacker.js');
+      self.importScripts('{{ "third_party/js-beautify/unpackers/urlencode_unpacker.js" | relative_url }}');
       if (Urlencoded.detect(source)) return Urlencoded.unpack(source);
       throw 'Not matched';
     },
     p_a_c_k_e_r: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/js-beautify/unpackers/p_a_c_k_e_r_unpacker.js');
+      self.importScripts('{{ "third_party/js-beautify/unpackers/p_a_c_k_e_r_unpacker.js" | relative_url }}');
       if (P_A_C_K_E_R.detect(source)) return P_A_C_K_E_R.unpack(source);
       throw 'Not matched';
     },
     javascriptobfuscator: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/js-beautify/unpackers/javascriptobfuscator_unpacker.js');
+      self.importScripts('{{ "third_party/js-beautify/unpackers/javascriptobfuscator_unpacker.js" | relative_url }}');
       if (JavascriptObfuscator.detect(source)) return JavascriptObfuscator.unpack(source);
       throw 'Not matched';
     },
     myobfuscate: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/js-beautify/unpackers/myobfuscate_unpacker.js');
+      self.importScripts('{{ "third_party/js-beautify/unpackers/myobfuscate_unpacker.js" | relative_url }}');
       if (MyObfuscate.detect(source)) return MyObfuscate.unpack(source);
       throw 'Not matched';
     },
     wiseeval: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/NotSoWise/unpacker.js');
+      self.importScripts('{{ "third_party/NotSoWise/unpacker.js" | relative_url }}');
       return Wise_EvalDecode(source);
     },
     wisefunction: () => {
-      self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/NotSoWise/unpacker.js');
+      self.importScripts('{{ "third_party/NotSoWise/unpacker.js" | relative_url }}');
       return Wise_FunctionalDecode(source);
     },
   };
