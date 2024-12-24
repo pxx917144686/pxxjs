@@ -1,7 +1,7 @@
 {
-  "name": "de4js",
-  "version": "1.12.0",
-  "description": "JavaScript Deobfuscator and Unpacker",
+  "name": "pxxjs",
+  "version": "0.0.2",
+  "description": "娱乐一下 测试效果",
   "main": "main.js",
   "scripts": {
     "build": "bundle exec jekyll build && workbox generateSW workbox-config.js",
@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/pxx917144686/pxxjs/issues"
   },
-  "homepage": "https://lelinhtinh.github.io/de4js/",
+  "homepage": "https://pxx917144686.github.io/pxxjs/",
   "funding": {
     "type": "opencollective",
     "url": "https://github.com/pxx917144686"
