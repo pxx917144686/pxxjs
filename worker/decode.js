@@ -11,7 +11,7 @@
 /* eslint-disable no-console */
 
 self.addEventListener('message', (e) => {
-  // Ensure the template engine correctly replaces these paths with actual URLs during build time
+  // Import necessary external libraries
   self.importScripts('{{ "third_party/mathjs/math.min.js" | relative_url }}');
   self.importScripts('{{ "lib/utils.js" | relative_url }}');
 
@@ -42,6 +42,7 @@ self.addEventListener('message', (e) => {
     },
     cleansource: () => {
       self.importScripts('{{ "lib/cleansource.js" | relative_url }}');
+      self.importScripts('{{ "lib/jjencode.js" | relative_url }}'); // Add jjencode.js here
       return CleanSource(source, options);
     },
     aaencode: () => {
