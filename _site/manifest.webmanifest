@@ -1,7 +1,7 @@
 {
   "name": "pxxjs",
   "short_name": "pxxjs",
-  "description": "娱乐一下 测试效果",
+  "description": "娱乐一下 测试效果","更新日志： 解密 jsjiami.com.v7 没时间修改代码@关联～ 停留在添加选项 阶段",
   "theme_color": "#b5e853",
   "background_color": "#151515",
   "display": "standalone",
