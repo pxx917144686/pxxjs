@@ -1,5 +1,3 @@
----
----
 /**
  * @name  {{ site.name }}
  * @description  {{ site.description }}
@@ -9,7 +7,7 @@
  * @license  {{ site.license }}
  */
 
-/* globals EvalDecode, ArrayDecode, _NumberDecode, JSFuckDecode, ObfuscatorIO, CleanSource, AADecode, JJdecode, Urlencoded, P_A_C_K_E_R, JavascriptObfuscator, MyObfuscate, Wise_EvalDecode, Wise_FunctionalDecode */
+/* globals EvalDecode, ArrayDecode, _NumberDecode, JSFuckDecode, ObfuscatorIO, CleanSource, AADecode, JJdecode, Urlencoded, P_A_C_K_E_R, JavascriptObfuscator, MyObfuscate, Wise_EvalDecode, Wise_FunctionalDecode, SojsonV7Decode */
 /* eslint-disable no-console */
 
 self.addEventListener('message', (e) => {
@@ -80,6 +78,10 @@ self.addEventListener('message', (e) => {
     wisefunction: () => {
       self.importScripts('{{ "third_party/NotSoWise/unpacker.js" | relative_url }}');
       return Wise_FunctionalDecode(source);
+    },
+    sojsonv7: () => {
+      self.importScripts('{{ "third_party/sojson/sojsonv7decode.js" | relative_url }}');  // Import the sojsonv7 decoder
+      return SojsonV7Decode.decode(source); // Assuming SojsonV7Decode.decode is the function that decodes it
     },
   };
 
