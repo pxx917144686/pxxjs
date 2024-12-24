@@ -122,18 +122,6 @@ code {
   }
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0; /* 闪烁时设置透明 */
-  }
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
 .magic-radio[disabled] + label {
   color: $disabled-color;
 
