@@ -9,7 +9,7 @@
  * @license  {{ site.license }}
  */
 
-/* globals EvalDecode,sojsonv7, ArrayDecode, _NumberDecode, JSFuckDecode, ObfuscatorIO, CleanSource, AADecode, JJdecode, Urlencoded, P_A_C_K_E_R, JavascriptObfuscator, MyObfuscate, Wise_EvalDecode, Wise_FunctionalDecode */
+/* globals EvalDecode, sojsonv7, ArrayDecode, _NumberDecode, JSFuckDecode, ObfuscatorIO, CleanSource, AADecode, JJdecode, Urlencoded, P_A_C_K_E_R, JavascriptObfuscator, MyObfuscate, Wise_EvalDecode, Wise_FunctionalDecode */
 /* eslint-disable no-console */
 
 self.addEventListener('message', (e) => {
