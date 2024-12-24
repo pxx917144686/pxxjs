@@ -1,3 +1,5 @@
+---
+---
 /**
  * @name  {{ site.name }}
  * @description  {{ site.description }}
@@ -11,7 +13,6 @@
 /* eslint-disable no-console */
 
 self.addEventListener('message', (e) => {
-  // Import necessary external libraries
   self.importScripts('{{ "third_party/mathjs/math.min.js" | relative_url }}');
   self.importScripts('{{ "lib/utils.js" | relative_url }}');
 
@@ -42,7 +43,6 @@ self.addEventListener('message', (e) => {
     },
     cleansource: () => {
       self.importScripts('{{ "lib/cleansource.js" | relative_url }}');
-      self.importScripts('{{ "lib/jjencode.js" | relative_url }}'); // Add jjencode.js here
       return CleanSource(source, options);
     },
     aaencode: () => {
