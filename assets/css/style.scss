@@ -111,9 +111,8 @@ code {
   &:empty:before {
     content: '这里 显示 转换结果……';
     font-size: 0.8em; /* 设置小体字 */
-    color: #ffffff; /* 白色 */
-    font-weight: bold; /* 加粗文字 */
-    animation: blink 2s step-start infinite; /* 闪烁效果，速度减慢为2秒 */
+    color: #d3d3d3; /* 浅灰色 */
+    animation: blink 4s step-start infinite; /* 闪烁效果，速度减慢为3秒 */
   }
 }
 
