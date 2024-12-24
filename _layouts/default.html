@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="BbaaM88Az_X9Kkutg_1d0lgK5u9URFdntKd8lB41hLs">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
+  {% seo %}
+
+  {% if site.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments)
+    };
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.google_analytics }}');
+
+  </script>
+  {% endif %}
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1 id="title">{{ site.name }}<sup>{{ site.version }}</sup></h1>
+      <h2>{{ site.description }}</h2>
+
+      <section id="downloads">
+        {% if site.show_downloads %}
+        <a href="{{ site.github.zip_url }}" class="btn">下载为 .zip</a>
+        <a href="{{ site.github.tar_url }}" class="btn">下载为 .tar.gz</a> {% endif %}
+        <a href="{{ site.github.repository_url }}" target="_blank" class="btn btn-github">
+          <span class="icon"></span>
+          在 GitHub 上查看
+        </a>
+      </section>
+    </div>
+  </header>
+
+  <div class="container">
+    <section id="main_content">
+      <div class="tabs">
+        <div class="tab active" data-target="String">粘贴代码</div>
+        <div class="tab" data-target="Local">本地文件</div>
+        <div class="tab" data-target="Remote">远程文件</div>
+      </div>
+      <div class="cf"></div>
+      <div class="tabs-contents">
+        <div class="tab-content show" id="contentString">
+          <textarea id="input" class="content" rows="7" placeholder="在这里粘贴代码..."></textarea>
+        </div>
+        <div class="tab-content" id="contentLocal">
+          <div class="box">
+            <input type="file" name="file" id="file" class="inputfile" accept="text/javascript,text/plain">
+            <label for="file" class="read-only">
+              <span id="fileName"></span>
+              <strong>选择一个文件…</strong>
+            </label>
+          </div>
+          <pre id="renderLocal" class="render read-only"></pre>
+        </div>
+        <div class="tab-content" id="contentRemote">
+          <form class="form-wrapper cf" id="formRemove">
+            <input type="url" placeholder="请输入网址" id="urlRemove" required>
+            <button type="submit" class="btn" id="submitRemove">提交</button>
+          </form>
+          <small>链接请求 Access-Control-Allow-Origin 部分</small>
+          <pre id="renderRemove" class="render read-only"></pre>
+        </div>
+      </div>
+
+      <div class="config tab-content show">
+        <form name="pxxjs">
+          <div class="methods-wrap">
+            <input id="none" class="magic-radio" type="radio" value="" name="encode" checked>
+            <label for="none">无</label>
+            {% for opt in site.data.methods %}
+            <input id="{{ opt.key }}" class="magic-radio pxxjs-method" type="radio" value="{{ opt.key }}" name="encode">
+            <label for="{{ opt.key }}">{{ opt.name }}</label>
+            {% endfor %}
+            <input id="nicify" class="magic-radio" type="radio" value="nicify" name="encode" disabled>
+            <label for="nicify">
+              <a href="https://github.com/pxx917144686/pxxjs/blob/master/README.md#helper" target="_blank"
+                class="help">代码混淆功能</a>
+            </label>
+          </div>
+          <div class="options-wrap">
+            {% for opt in site.data.options %}
+            <input id="{{ opt.key }}" class="magic-checkbox pxxjs-option" type="checkbox" value="yes"
+              name="{{ opt.key }}" {% if opt.checked %} checked {% endif %}>
+            <label for="{{ opt.key }}">{{ opt.name }}</label>
+            {% endfor %}
+          </div>
+        </form>
+      </div>
+
+      <div class="center">
+        <button id="clear" class="btn" type="reset">
+          清空
+        </button>
+        <button id="auto" class="btn" type="button">
+          自动解码
+        </button>
+      </div>
+
+      <div class="view-wrap">
+        <div class="view-control">
+          <button id="copyjs" class="btn" type="button">
+            <img class="btn-icon" src="{{ 'assets/images/buttons/copy-document.png' | relative_url }}"
+              alt="复制到剪贴板">
+          </button>
+          <a id="download" class="btn" type="button" href="#" download="result.js">
+            <img class="btn-icon" src="{{ 'assets/images/buttons/download.png' | relative_url }}" alt="下载文件">
+          </a>
+          <a id="preview" class="btn" type="button" href="#">
+            <img class="btn-icon" src="{{ 'assets/images/buttons/external-link-symbol.png' | relative_url }}"
+              alt="在新标签页中打开">
+          </a>
+        </div>
+        <textarea id="readable"></textarea>
+        <pre id="view" class="hljs"></pre>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <section class="sponsors">
+        <h3>依赖</h3>
+        <p>依赖网址 <a href="https://sansec.io/" target="_blank"
+            rel="noopener noreferrer">Sansec</a>.</p>
+      </section>
+      <section class="credits">
+        <h3>介绍</h3>
+        <p>项目由 <a href="https://github.com/lelinhtinh" title="lelinhtinh">lelinhtinh</a> 更新
+          <br>托管于 GitHub Pages
+        </p>
+        <p>图标由 <a target="_blank" href="https://www.flaticon.com/free-icon/artificial-intelligence_653469"
+            title="Eucalyp">Eucalyp</a> 提供</p>
+      </section>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="{{ 'third_party/clipboard-js/clipboard.min.js' | relative_url }}"></script>
+  <script src="{{ 'main.js' | relative_url }}" type="text/javascript"></script>
+
+  {% if site.environment == "production" or jekyll.environment == "production" %}
+  <script type="module">
+    import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-window.prod.mjs';
+
+    if ('serviceWorker' in navigator) {
+      const wb = new Workbox("{{ 'sw.js' | relative_url }}");
+
+      wb.addEventListener('installed', (event) => {
+        if (!event.isUpdate) return;
+
+        caches.keys().then((cacheNames) =>
+          Promise.all(
+            cacheNames.map((cacheName) => {
+              console.log('Clear cache', cacheName);
+              return caches.delete(cacheName);
+            })
+          )
+        );
+
+        if (confirm('已下载新版本！立即启动吗？')) {
+          location.reload(true);
+        }
+      });
+
+      wb.register();
+    }
+  </script>
+  {% endif %}
+</body>
+
+</html>
