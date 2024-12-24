@@ -1,7 +1,7 @@
 - key: evalencode
   name: Eval
 - key: sojsonv7
-  name: jsjiami.v5
+  name: jsjiami.v7
 - key: arrayencode
   name: Array
 - key: obfuscatorio
