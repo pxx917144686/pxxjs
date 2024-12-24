@@ -1,0 +1,31 @@
+name: pxxjs
+title: pxxjs
+description: 娱乐一下 测试效果
+version: 0.0.2
+author: pxx917144686
+url: https://github.com/pxx917144686/pxxjs
+baseurl: /pxxjs
+repository: pxx917144686/pxxjs
+license: MIT
+
+theme: jekyll-theme-hacker
+show_downloads: false
+google_analytics: UA-106940288-1
+sass:
+  style: compressed
+
+exclude:
+  [
+    "Gemfile",
+    "Gemfile.lock",
+    "node_modules",
+    "package.json",
+    "package-lock.json",
+    "Dockerfile",
+    "docker-compose.yml",
+    "docker-entrypoint.sh",
+    "workbox-config.js"
+  ]
+incremental: false
+
+environment: production
