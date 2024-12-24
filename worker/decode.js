@@ -1,5 +1,5 @@
 self.addEventListener('message', (e) => {
-  // 确保 importScripts 路径正确
+  // 修正路径：直接引用有效的 URL
   self.importScripts('https://pxx917144686.github.io/pxxjs/worker/third_party/mathjs/math.min.js');
   self.importScripts('https://pxx917144686.github.io/pxxjs/worker/lib/utils.js');
 
