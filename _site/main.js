@@ -1,6 +1,7 @@
 /**
  * @name  pxxjs
  * @description  娱乐一下 测试效果
+更新日志： 解密 jsjiami.com.v7 没时间修改代码@关联～ 停留在添加选项 阶段
  * @author  pxx917144686 <> (http://localhost:4000)
  * @version  0.0.2
  * @copyright  pxx917144686 2017
