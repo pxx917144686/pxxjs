@@ -109,7 +109,7 @@ code {
   }
 
   &:empty:before {
-    content: '这里 显示 转换结果……';
+    content: '这里 显示 转换结果. . .';
     font-size: 0.8em; /* 设置小体字 */
     color: #d3d3d3; /* 浅灰色 */
     animation: blink 4s step-start infinite; /* 闪烁效果，速度减慢为3秒 */
