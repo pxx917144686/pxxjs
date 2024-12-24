@@ -9,7 +9,7 @@
  * @license  {{ site.license }}
  */
 
-/* globals EvalDecode, ArrayDecode, _NumberDecode, JSFuckDecode, ObfuscatorIO, CleanSource, AADecode, JJdecode, Urlencoded, P_A_C_K_E_R, JavascriptObfuscator, MyObfuscate, Wise_EvalDecode, Wise_FunctionalDecode */
+/* globals EvalDecode,sojsonv7, ArrayDecode, _NumberDecode, JSFuckDecode, ObfuscatorIO, CleanSource, AADecode, JJdecode, Urlencoded, P_A_C_K_E_R, JavascriptObfuscator, MyObfuscate, Wise_EvalDecode, Wise_FunctionalDecode */
 /* eslint-disable no-console */
 
 self.addEventListener('message', (e) => {
@@ -24,6 +24,10 @@ self.addEventListener('message', (e) => {
     evalencode: () => {
       self.importScripts('{{ "lib/evaldecode.js" | relative_url }}');
       return EvalDecode(source);
+    },
+    jsjiami.com.v7: () => {
+      self.importScripts('{{ "lib/sojsonv7.js" | relative_url }}');
+      return sojsonv7.js(source);
     },
     _numberencode: () => {
       self.importScripts('{{ "lib/numberdecode.js" | relative_url }}');
