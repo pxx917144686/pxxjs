@@ -22,6 +22,11 @@ code {
   font-family: 'Roboto Mono', monospace;
 }
 
+.pxx-red {
+  color: red;
+  font-weight: bold; /* 如果不需要加粗可以去掉这行 */
+}
+
 .container {
   max-width: 1280px;
 }
