@@ -1,13 +1,17 @@
 name: pxxjs
 title: "<span style='color: red; font-weight: bold;'>pxx</span>js"
-description: "<span style='color: #ff66cc; font-size: 0.6em; font-weight: bold; animation: blink 1s step-start infinite;'>娱乐一下 测试效果</span><br><span style='font-size: 0.6em; line-height: 1;'>更新日志：</span><span style='font-size: 0.6em; line-height: 1;'>解密 jsjiami.com.v7 没时间修改代码@关联～<br>停留在添加选项阶段</span>
-<style>
-  @keyframes blink {
-    50% {
-      opacity: 0;
+description: |
+  <span style='color: #ff66cc; font-size: 0.6em; font-weight: bold; animation: blink 1s step-start infinite;'>娱乐一下 测试效果</span><br>
+  <span style='font-size: 0.6em; line-height: 1;'>更新日志：</span>
+  <span style='font-size: 0.6em; line-height: 1;'>解密 jsjiami.com.v7 没时间修改代码@关联～<br>停留在添加选项阶段</span>
+styles: |
+  <style>
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
     }
-  }
-</style>"
+  </style>
 version: 0.0.2
 author: pxx917144686
 url: https://github.com/pxx917144686/pxxjs
